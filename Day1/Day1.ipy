@@ -1,0 +1,24 @@
+def exists(n):
+    if len(n) == 0:
+        return False
+    else:
+        return True
+
+
+elf_totals = []
+elf_total = 0
+
+with open('Advent-of-Code/Day1/Input.txt') as f:
+    for line in f:
+
+        calories = line.split()
+
+        if exists(calories):
+            calories = int(calories[0])
+            elf_total += calories
+
+        else:
+            elf_totals.append(elf_total)
+            elf_total = 0
+
+print(max(elf_totals))
