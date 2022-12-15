@@ -8,7 +8,7 @@ def exists(n):
 elf_totals = []
 elf_total = 0
 
-with open('Advent-of-Code/Day1/Input.txt') as f:
+with open('/Users/bridgetbangert/Desktop/Advent-of-Code/Day1/Input.txt') as f:
     for line in f:
 
         calories = line.split()
