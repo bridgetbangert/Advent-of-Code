@@ -1,0 +1,33 @@
+plays = []
+total_score = 0
+
+with open('/Users/bridgetbangert/Desktop/Advent-of-Code/Day2/Input.txt') as f:
+    for line in f:
+        p = line.split()
+        plays.append(p)
+
+def score1(s):
+    shape_score = {'X' : 1, 'Y' : 2, 'Z' : 3}
+    return shape_score.get(s[1])
+
+def score2(s):
+    loss = [['A', 'Z'], ['B', 'X'], ['C', 'Y']]
+    draw = [['A', 'X'], ['B', 'Y'], ['C', 'Z']]
+    win = [['A', 'Y'], ['B', 'Z'], ['C', 'X']]
+
+    if s in loss:
+        return 0
+    
+    if s in draw:
+        return 3
+
+    if s in win:
+        return 6
+
+def score(s):
+    return score1(s) + score2(s)
+
+for play in plays:
+    total_score += score(play)
+
+print(total_score)
